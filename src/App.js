@@ -1,24 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { GlobalProvider, useGlobalState } from './components/GlobalState';
+import PetInformationNode from './components/PetInformationNode';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  Navigate
+} from 'react-router-dom';
+
+import Topbar from './components/Topbar';
+import Home from './components/Home';
+import Information from './components/Information';
+
 
 function App() {
+
+  const { globalState, setGlobalState } = useGlobalState();
+  const PetInformationRouteList = globalState.map(
+    (pet) => (
+
+      <Route key={pet.id}
+        path={`/Information/id=${pet.id}`}
+        element={<PetInformationNode id={pet.id} />}
+      >
+      </Route>
+
+    )
+  )
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div class="App">
+        <Topbar />
+        <div>
+          <Routes>
+            
+            <Route path="/" element={<Home />} />
+            <Route path="/Information" element={<Information />} />
+            {PetInformationRouteList}
+
+          </Routes>
+        </div>
+      </div>
+    </Router>
   );
 }
 
