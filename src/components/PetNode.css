@@ -1,0 +1,62 @@
+.pet-list {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pet-list:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+span {
+    font-family: 'Arial', sans-serif; /* 或者你可以选择其他合适的字体 */
+    color: #333;
+    font-size: 1.1em; /* 相对于父级的大小 */
+    line-height: 1.5;
+}
+
+.species-js {
+    color: #666; /* 饮食位置的颜色 */
+    font-size: 0.9em; 
+}
+
+.age-gender-js {
+    font-weight: 400; /* 轻一些的字重 */
+    font-size: 1em;
+    color: #555;
+}
