@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Map, Marker, NavigationControl, InfoWindow, CityListControl, PanoramaControl, ScaleControl, ZoomControl, CustomOverlay } from 'react-bmapgl'
 //需要关掉strict模式，否则会地图加载后便消失（详见https://juejin.cn/post/7426628755738624037）
 import PetMapTag from './PetMapTag';
@@ -27,6 +28,7 @@ function PetMap() {
 
     return (
         <div>
+
 
             <Map
                 center={{ lng: 121.399, lat: 31.322 }}
