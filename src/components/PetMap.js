@@ -8,6 +8,10 @@ import { useNavigate, } from 'react-router-dom';
 function PetMap() {
     const { globalState, setGlobalState } = useGlobalState();
     let navigate = useNavigate();
+    function JumpToPetInformation(id)
+    {
+        navigate(`/Information/id=${id}`);
+    }
 
     const pettaglist = globalState.map(
         (pettag) => (
@@ -21,10 +25,7 @@ function PetMap() {
             />
         )
     )
-    function JumpToPetInformation(id)
-    {
-        navigate(`/Information/id=${id}`);
-    }
+
 
     return (
         <div>
