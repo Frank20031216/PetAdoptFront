@@ -4,8 +4,8 @@ import '../compoentsCss/PetMapTag.css'
 
 function PetMapTag(props) {
     return (
-        <CustomOverlay  position={props.position} >
-            <div class="pet-tag">
+        <CustomOverlay  position={props.position} coordType="bd09mc">
+            <div class="pet-tag" >
                 <img 
                 onClick={() => {props.JumpToPetInformation(props.id)}} 
                 alt = {props.name} src={props.avatar}

@@ -15,6 +15,7 @@ hover {
     height: 100%;
     transform: scale(1.1);
     transition: all 0.6s;
+    border-radius: 10px;
   }
 
 img:hover {

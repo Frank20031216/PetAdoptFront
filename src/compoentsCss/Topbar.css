@@ -1,20 +1,36 @@
 .topbar {
+    
     position:fixed;
     top: 0;
     width: 100%;
     z-index: 99;
     div{
+        
         height: 50px;
     }
     nav {
 
-        background-color:coral;
+        background-color:var(--button-color);
         
         overflow: hidden;
 
     }
 
-
+    button {
+        background-color:var(--button-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color:var(--button-hover-color);
+    }
 
 
     nav ul {
@@ -35,10 +51,21 @@
     nav ul li {
 
         position: relative;
+        background-color:var(--button-color);
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        transition: background-color 0.3s;
 
     }
 
-
+nav ul li:hover{
+    background-color:var(--button-hover-color);
+}
 
 
     nav ul li a {
@@ -62,7 +89,7 @@
 
         background-color: ddd;
 
-        color: black;
+        
 
     }
 

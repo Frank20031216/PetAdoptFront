@@ -12,7 +12,7 @@ import {
 import Topbar from './components/Topbar';
 import Home from './components/Home';
 import Information from './components/Information';
-
+import AddPetPage from './components/AddPetPage';
 
 function App() {
 
@@ -39,7 +39,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/Information" element={<Information />} />
             {PetInformationRouteList}
-
+            <Route path="/AddPetPage" element={<AddPetPage />} />
           </Routes>
         </div>
       </div>

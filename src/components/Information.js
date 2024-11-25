@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useRef, useEffect } from "react";
 import { useGlobalState } from './GlobalState'
 import PetNode from './PetNode';
-import {useNavigate,} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 function Information() {
 
@@ -28,7 +28,7 @@ function Information() {
 
     return (
 
-        <div class="infomation-container" style={{ marginTop: '50px' }}>
+        <div class="infomation-container" style={{ marginTop: '80px' }}>
             {PetList}
         </div>
     );
