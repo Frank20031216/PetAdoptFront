@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import { GlobalProvider, useGlobalState } from './components/GlobalState';
 import PetInformationNode from './components/PetInformationNode';
 import {
@@ -33,7 +33,7 @@ function App() {
     <Router>
       <div class="App">
         <Topbar />
-        <div>
+        <div key = {Math.random()}>
           <Routes>
             
             <Route path="/" element={<Home />} />

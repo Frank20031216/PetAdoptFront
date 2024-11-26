@@ -6,6 +6,7 @@ const GlobalContext = createContext();
 
 // 创建提供者组件
 export const GlobalProvider = ({ children }) => {
+    
     const [globalState, setGlobalState] = useState([
         {
             id: 1,
@@ -62,10 +63,12 @@ export const GlobalProvider = ({ children }) => {
             gender: "Female",
             description: "This is a beautiful cat, who loves playing with you and sleeping in your lap."
         }
-    ]);
+    ]
 
+);
+const [position, setPosition] = useState({lng:10,lat:10});
     return (
-        <GlobalContext.Provider value={{ globalState, setGlobalState }}>
+        <GlobalContext.Provider value={{ globalState, setGlobalState,position, setPosition }}>
             {children}
         </GlobalContext.Provider>
     );

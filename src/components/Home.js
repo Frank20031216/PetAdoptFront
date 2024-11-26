@@ -1,12 +1,11 @@
 import React from 'react';
-import Map from './PetMap'
+import PetMap from './PetMap'
 import PetInformationNode from './PetInformationNode';
 
 function Home() {
     return (
         <div>
-            <Map />
-            
+            <PetMap />
         </div>
     )
 }

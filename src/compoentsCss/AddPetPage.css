@@ -1,0 +1,60 @@
+.AddPetPage {
+    margin-top: 80px;         /* 与上方留出80px的距离 */
+    max-width: 600px;        /* 最大宽度600px */
+    margin-left: auto;       /* 水平居中 */
+    margin-right: auto;      /* 水平居中 */
+    padding: 20px;           /* 内边距20px */
+    border: 1px solid #ccc;  /* 边框颜色 */
+    border-radius: 10px;     /* 圆角边框 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    background-color: #fff;  /* 背景颜色 */
+
+
+h1 {
+    text-align: center;      /* 标题居中对齐 */
+    color: #333;             /* 标题颜色 */
+}
+
+label {
+    display: block;          /* 块级显示，便于垂直排列 */
+    margin: 10px 0 5px;     /* 上部10px，下部5px的边距 */
+    font-weight: 500;        /* 加粗字体 */
+}
+
+input[type="text"] {
+    width: 550px;             /* 输入框宽度100% */
+    padding: 10px;          /* 内边距10px */
+    border: 1px solid #ccc; /* 边框颜色 */
+    border-radius: 5px;     /* 圆角 */
+    font-size: 16px;        /* 字体大小 */
+    transition: border-color 0.3s; /* 边框颜色切换的过渡效果 */
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;   /* 获取焦点时的边框颜色 */
+    outline: none;           /* 去掉默认的轮廓 */
+}
+
+input[type="text"]::placeholder {
+    color: #888;             /* 占位符颜色 */
+    font-style: italic;      /* 占位符斜体 */
+}
+
+button{
+    
+    margin-top: 15px; 
+    background-color:var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+}
+}
