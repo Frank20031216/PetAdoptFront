@@ -9,6 +9,26 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
     background-color: #fff;  /* 背景颜色 */
 
+    select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background-color: #f7f7f7; /* 背景颜色 */
+        color: #333; /* 文字颜色 */
+        font-size: 16px; /* 字体大小 */
+        padding: 8px 15px; /* 内边距 */
+        border: 1px solid #ddd; /* 边框 */
+        border-radius: 4px; /* 边框圆角 */
+        outline: none; /* 移除焦点时的轮廓 */
+        cursor: pointer; /* 鼠标悬停时显示指针 */
+      }
+
+      select:focus {
+        border-color: #007bff; /* 聚焦时边框颜色 */
+        box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25); /* 聚焦时的阴影 */
+      }
+
+    
 
 h1 {
     text-align: center;      /* 标题居中对齐 */
@@ -16,7 +36,7 @@ h1 {
 }
 
 label {
-    display: block;          /* 块级显示，便于垂直排列 */
+    display:block;         /* 块级显示，便于垂直排列 */
     margin: 10px 0 5px;     /* 上部10px，下部5px的边距 */
     font-weight: 500;        /* 加粗字体 */
 }

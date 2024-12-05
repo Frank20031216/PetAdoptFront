@@ -20,6 +20,7 @@ function AddPetTag(props) {
                     onClick={props.JumpToAddPetPage}
                 >AddPet</button>
             </div>
+            
         </CustomOverlay>
     )
 }
