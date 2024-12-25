@@ -75,4 +75,10 @@ button{
 button:hover {
     background-color: var(--button-hover-color);
 }
+
+a{
+    margin-top: 25px;
+    margin-right: 30px;
+    float: right;
+}
 }

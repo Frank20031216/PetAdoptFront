@@ -1,47 +1,47 @@
-import React, { useState } from "react";
-import "../compoentsCss/Login.css"
+import React, { useState,useEffect } from "react";
+import "../compoentsCss/Login.css";
+import { useGlobalState } from './GlobalState';
+import { useNavigate } from "react-router-dom";
+
 function Login() {
+
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    
+    const navigate = useNavigate();
+
+    
 
     const handleLogin = (event) => {
         event.preventDefault();
         // 这里添加登录逻辑
-        authenticateUser(username, password);
-    };
-
-    function authenticateUser(username, password) {
-        // 这里应该是调用后端API的代码
-        // 假设我们使用fetch来发送请求
-        fetch('/login', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, password }),
-        })
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    // 登录成功，保存用户信息，如token
-                    localStorage.setItem('userToken', data.token);
-                    // 根据用户角色跳转到不同页面
-                    if (data.userRole === 'admin') {
-                        // 重定向到管理页面
-                    } else {
-                        // 重定向到用户页面
-                    }
-                } else {
-                    // 登录失败，显示错误信息
-                }
+        fetch("http://localhost:8080/user/verify/?username=" + username+"&password="+password, 
+            { method: 'POST' }).
+            then((response) => {
+                console.log(response.json().then((res)=>{
+                    console.log(res);
+                   if(res == 1)
+                   {
+                    fetch("http://localhost:8080/user/getIdentity/?username=" + username, 
+                        { method: 'POST' }).then(response => response.text()) // 直接获取文本
+                        .then(identity => {
+                          console.log(identity); // 处理字符串数据
+                          localStorage.setItem("identity", identity); // 保存身份信息
+                        })
+                    localStorage.setItem("token", 1);
+                    localStorage.setItem("username", username);
+                    localStorage.setItem("password", password);
+                    alert("登录成功");
+                    navigate("/");
+                   }
+                   else{
+                    alert("用户名或密码错误");
+                    setUsername("");
+                    setPassword("");
+                   }
+                }))
             })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
-    }
-
-
-
+    };
 
     return (
         <div class="Loginpage">
@@ -65,6 +65,8 @@ function Login() {
                 />
                 <br />
                 <button type="submit">登录</button>
+                
+                <a href="/signup">Don't have an account? Sign up for one!</a>
             </form>
         </div>
     );

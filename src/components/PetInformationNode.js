@@ -8,6 +8,7 @@ function PetInformationNode(props) {
     const filteredpet = globalState.filter(pet => pet.id === props.id);
 
     console.log(filteredpet);
+    
     const PetPage = filteredpet.map((pet) => (
         <div>
             <ul key={pet.id}>

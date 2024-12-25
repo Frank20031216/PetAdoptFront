@@ -1,5 +1,6 @@
 //记录所有pet信息，全局变量
 import React, { createContext, useContext, useState ,useEffect} from 'react';
+import { use } from 'react';
 
 // 创建上下文
 const GlobalContext = createContext();
@@ -22,10 +23,23 @@ useEffect(() => {
 }, [editCount])
 
 
+
 const [position, setPosition] = useState({lng:10,lat:10});
 
+const [user,setUser] = useState({name:"",password:""});
+const [token ,setToken] = useState('0');
+
+useEffect(() => {
+
+  const savedToken = localStorage.getItem("token");
+  if (savedToken) {
+    setToken(savedToken);
+    return; // 如果有 token，更新状态并退出函数
+  }
+}, []);
+
     return (
-        <GlobalContext.Provider value={{ globalState, setGlobalState,position, setPosition,editCount, setEditCount }}>
+        <GlobalContext.Provider value={{ globalState, setGlobalState,position, setPosition,editCount, setEditCount,user,setUser ,token ,setToken}}>
             {children}
         </GlobalContext.Provider>
     );

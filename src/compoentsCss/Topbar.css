@@ -1,29 +1,37 @@
-#login{ 
+#login {
     position: absolute;
 
     right: 20px;
 }
 
-.topbar {
+#logout {
+    position:absolute;
     
-    position:fixed;
+    right: 20px;
+}
+
+.topbar {
+
+    position: fixed;
     top: 0;
     width: 100%;
     z-index: 99;
-    div{
-        
+
+    div {
+
         height: 50px;
     }
+
     nav {
 
-        background-color:var(--button-color);
-        
+        background-color: var(--button-color);
+
         overflow: hidden;
 
     }
 
     button {
-        background-color:var(--button-color);
+        background-color: var(--button-color);
         color: white;
         border: none;
         padding: 10px 20px;
@@ -33,9 +41,9 @@
         font-weight: bold;
         transition: background-color 0.3s;
     }
-    
+
     button:hover {
-        background-color:var(--button-hover-color);
+        background-color: var(--button-hover-color);
     }
 
 
@@ -52,12 +60,25 @@
     }
 
 
-
+nav ul p{
+    right: 300px;
+    margin-top: 13px;
+    position: absolute;
+    background-color: var(--button-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
 
     nav ul li {
 
         position: relative;
-        background-color:var(--button-color);
+        background-color: var(--button-color);
         color: white;
         border: none;
         padding: 10px 20px;
@@ -69,10 +90,15 @@
 
     }
 
-nav ul li:hover{
-    background-color:var(--button-hover-color);
-}
+    nav ul li:hover {
+        background-color: var(--button-hover-color);
+    }
 
+    nav ul li:active {
+        background-color: rgb(45, 88, 3);
+    }
+
+    
 
     nav ul li a {
 
@@ -89,66 +115,10 @@ nav ul li:hover{
     }
 
 
-
-
     nav ul li a:hover {
 
         background-color: ddd;
-
         
-
     }
-
-
-
-
-    .dropdown-content {
-
-        display: none;
-
-        position: absolute;
-
-        background-color: f9f9f9;
-
-        min-width: 160px;
-
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-
-        z-index: 1;
-
-    }
-
-
-    .dropdown-content a {
-
-        color: black;
-
-        padding: 12px 16px;
-
-        text-decoration: none;
-
-        display: block;
-
-        text-align: left;
-
-    }
-
-
-
-    .dropdown-content a:hover {
-
-        background-color: f1f1f1;
-
-    }
-
-
-
-    nav ul li:hover .dropdown-content {
-
-        display: block;
-
-    }
-
 
 }
-

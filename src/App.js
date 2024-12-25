@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { GlobalProvider, useGlobalState } from './components/GlobalState';
+
+
 import PetInformationNode from './components/PetInformationNode';
 
 import {
@@ -18,21 +20,24 @@ import AddPetPage from './components/AddPetPage';
 import Login from './components/Login';
 import About from './components/About';
 import Contact from './components/Contact';
+import Signup from './components/Signup';
 
 function App() {
 
-  const { globalState, setGlobalState } = useGlobalState();
+  const { globalState, setGlobalState} = useGlobalState();
   const PetInformationRouteList = globalState.map(
     (pet) => (
-
       <Route key={pet.id}
         path={`/Information/id=${pet.id}`}
         element={<PetInformationNode id={pet.id} />}
       >
       </Route>
-
     )
   )
+
+  
+    
+   
 
   return (
     <Router>
@@ -49,6 +54,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup />} />
 
         </Routes>
 
@@ -58,6 +64,8 @@ function App() {
 
     </Router>
   );
+
+
 }
 
 export default App;

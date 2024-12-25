@@ -59,7 +59,33 @@ input[type="text"]::placeholder {
     color: #888;             /* 占位符颜色 */
     font-style: italic;      /* 占位符斜体 */
 }
+input[type="file"] {
+    /* 修复Firefox中按钮的内边距问题 */
+    -moz-appearance: none;
+    /* 修复Chrome和Safari中按钮的内边距问题 */
+    -webkit-appearance: none;
+    /* 应用自定义样式 */
+    appearance: none;
+    background-color: #f8f9fa; /* 背景颜色 */
+    border: 1px solid #ddd; /* 边框 */
+    border-radius: 4px; /* 圆角边框 */
+    padding: 10px 20px; /* 内边距 */
+    outline: none; /* 移除焦点时的轮廓 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+    transition: border-color 0.2s ease-in-out; /* 平滑过渡效果 */
+}
 
+/* 当input[type="file"]获得焦点时的样式 */
+input[type="file"]:focus {
+    border-color: #007bff; /* 聚焦时边框颜色 */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25); /* 聚焦时阴影效果 */
+}
+
+/* 可以为input[type="file"]添加一个自定义的按钮样式 */
+input[type="file"].custom-file-input {
+    visibility: hidden; /* 隐藏原生的input */
+    position: absolute; /* 绝对定位 */
+}
 button{
     
     margin-top: 15px; 

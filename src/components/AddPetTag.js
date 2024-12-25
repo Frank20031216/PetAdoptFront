@@ -8,7 +8,10 @@ function AddPetTag(props) {
 
     let navigate = useNavigate();
     
+    const identity = localStorage.getItem('identity');
     
+    if(identity === '管理员')
+    {
     return (
         <CustomOverlay
 
@@ -23,6 +26,10 @@ function AddPetTag(props) {
             
         </CustomOverlay>
     )
+}
+else{
+    return null;
+}
 }
 
 export default AddPetTag;
