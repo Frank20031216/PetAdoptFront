@@ -1,0 +1,112 @@
+* {
+    margin:0;
+    outline:None;
+    border:None;
+
+}
+.outer{
+    background-image: url("https://media.istockphoto.com/id/2118123302/zh/%E5%90%91%E9%87%8F/cats-and-dogs-approve.jpg?s=2048x2048&w=is&k=20&c=mK_637Tb-v1l8cjfQaNmeC74f5nXTS5REgT1jpaxc_0=");
+    background-repeat: no-repeat;
+    background-position: center 10%;
+    background-size: cover;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* 使用更具语义化的类名 */
+.login-container {
+    display: flex;               /* 启用 flex 布局 */
+    justify-content: center;     /* 水平居中 */
+    align-items: center;         /* 垂直居中 */
+    flex-direction: column;      /* 元素垂直排列 */
+    background-color: rgba(0, 128, 30, 0.92);       /* 背景颜色 */
+    width: 35%;                  /* 宽度设置为 35% */
+    padding:50px 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.13);
+}
+
+h1{
+    font-size:3rem;
+    color: white;
+    margin:0 0 50px;
+    letter-spacing: 3px;
+}
+
+.input-wrap{
+    position: relative;
+    border:1.5px solid white;
+    display:flex;
+    align-items: center;
+    margin-bottom:25px;
+    /*justify-content: flex-start;*/
+    /*justify-content: space-between;*/
+    justify-content: space-around;
+    height:55px;
+    width:90%;
+    border-radius: 50px;
+    box-shadow: 0 0 5px rgba(255,255,255,0.7);
+
+}
+
+.input-no-border{
+    background-color: transparent;
+    font-size: 1.2rem;
+
+    color:white;
+    padding:5px 25px;
+    border: none;   /* 去掉边框 */
+    outline: none;  /* 去掉轮廓 */
+
+}
+
+input::placeholder{
+    font-size:1.2rem;
+    color:white;
+
+}
+
+.input-wrap i {
+
+    font-size: 1.2rem;
+    color: white;
+    padding-left: 25px;
+}
+
+.rem{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    width:90%;
+    margin-bottom: 25px;
+}
+.rem p,
+.rem a{
+    font-size: 1.2rem;
+    color: white;
+}
+
+button{
+    font-size: 1.2rem;
+    height:55px;
+    width:90%;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.reg{
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 40px;
+}
+.reg a{
+    font-weight: 500;
+}
+
