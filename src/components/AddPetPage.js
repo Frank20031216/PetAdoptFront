@@ -17,7 +17,8 @@ function AddPetPage() {
     const [name, setName] = useState("");
     const [avatar, setAvatar] = useState("");
     const [age, setAge] = useState("");
-    const [species, setSpecies] = useState("Cat");
+    const [species, setSpecies] = useState("狸花猫");
+    const [kind, setKind] = useState("cat");
     const [gender, setGender] = useState("male");
     const [description, setDescription] = useState("");
 
@@ -33,8 +34,8 @@ function AddPetPage() {
 
         event.preventDefault();
         fetch("http://localhost:8080/pet/insert/?name=" + name + "&avatar=" + avatar + "&age="
-            + age + "&species=" + species + "&gender=" + gender + "&description="
-            + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat,
+            + age + "&species=" + species+ "&kind=" + kind + "&gender=" + gender + "&description="
+            + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat +"&status=6",
             { method: 'POST' }).
             then(() => {
                 console.log("添加成功");
@@ -68,9 +69,6 @@ function AddPetPage() {
 
 
   
-        
-
-
 
     return (
         <div class="AddPetPage" style={{ marginTop: "80px" }}>
@@ -93,13 +91,47 @@ function AddPetPage() {
                 <label>Description:</label>
                 <input type="text" value={description} onChange={(event) => { setDescription(event.target.value) }}></input><br></br>
 
+
+                <label>
+                    kind:
+                    <select id="kind" name="selectkind"  value={kind} onChange={(event) => { setKind(event.target.value) }}>
+                    <option value="cat">Cat</option>
+                    <option value="dog">Dog</option>
+                    </select>
+                </label>
+
                 <label>
                     Species:
                     <select id="species" name="selectspecies" defaultValue={"Cat"} value={species} onChange={(event) => { setSpecies(event.target.value) }}>
-                        <option value="cat" >Cat</option>
-                        <option value="dog" >Dog</option>
+                        {kind === "dog"?
+                        <>
+                        <option value="中华田园犬">中华田园犬</option>
+                        <option value="哈士奇犬" >哈士奇犬</option>
+                        <option value="吉娃娃犬" >吉娃娃犬</option>
+                        <option value="贵宾犬" >贵宾犬</option>
+                        <option value="比熊犬" >比熊犬</option>
+                        <option value="柯基犬" >柯基犬</option>
+                        <option value="比熊犬" >比熊犬</option>
+                        <option value="牧羊犬" >牧羊犬</option>
+                        <option value="金毛寻回犬" >金毛寻回犬</option>
+                        <option value="拉布拉多犬" >拉布拉多寻回犬</option>
+                        <option value="其他犬类" >其他犬类</option>
+                        </>
+                        :
+                        <>
+                        <option value="狸花猫" >狸花猫</option>
+                        <option value="橘猫" >橘猫</option>
+                        <option value="波斯猫" >波斯猫</option>
+                        <option value="英国短毛猫" >英国短毛猫</option>
+                        <option value="美国短毛猫" >美国短毛猫</option>
+                        <option value="布偶猫" >布偶猫</option>
+                        <option value="缅因猫" >缅因猫</option>
+                        <option value="其他猫类" >其他猫类</option>
+                        </>
+                        }
                     </select>
                 </label>
+
 
                 <label>
                     Gander:

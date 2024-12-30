@@ -28,8 +28,8 @@ function App() {
   const PetInformationRouteList = globalState.map(
     (pet) => (
       <Route key={pet.id}
-        path={`/Information/id=${pet.id}`}
-        element={<PetInformationNode id={pet.id} />}
+        path={`/Information/id=${pet.petId}`}
+        element={<PetInformationNode petId={pet.petId} />}
       >
       </Route>
     )

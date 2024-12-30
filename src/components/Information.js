@@ -10,16 +10,16 @@ function Information() {
 
 
     let navigate = useNavigate();
-    function ViewDetail(id) {
-        navigate(`/Information/id=${id}`)
+    function ViewDetail(petId) {
+        navigate(`/Information/id=${petId}`)
     }
 
 
     const PetList = globalState.map(
         (pet) => (
             <PetNode
-                key={pet.id}
-                id={pet.id}
+                key={pet.petId}
+                id={pet.petId}
                 avatar={pet.avatar}
                 name={pet.name}
                 ViewDetail={ViewDetail}

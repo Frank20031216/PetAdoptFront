@@ -29,7 +29,7 @@ function Topbar() {
                     <li><a href="/contact">Contact</a></li>
 
                     {localStorage.getItem('token') === "1" ?
-                     <p>Welcome {localStorage.getItem('username')}!('・ω・')</p> :
+                     <p>Welcome {localStorage.getItem('account')}!('・ω・')</p> :
                       null}
 
                     {localStorage.getItem('token') === "1"?

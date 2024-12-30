@@ -15,9 +15,9 @@ function PetMap(props) {
 
     let navigate = useNavigate();
 
-    function JumpToPetInformation(id) {
+    function JumpToPetInformation(petId) {
 
-        navigate(`/Information/id=${id}`)
+        navigate(`/Information/id=${petId}`)
     }
     function JumpToAddPetPage() {
         navigate("/AddPetPage",{state:{position:position}})
@@ -44,8 +44,8 @@ function PetMap(props) {
     const pettaglist = globalState.map(
         (pettag) => (
             <PetMapTag
-                key={pettag.id}
-                id={pettag.id}
+                key={pettag.petId}
+                id={pettag.petId}
                 position={{ lng: pettag.lng, lat: pettag.lat }}
                 name={pettag.name}
                 avatar={pettag.avatar}

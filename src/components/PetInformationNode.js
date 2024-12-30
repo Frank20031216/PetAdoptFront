@@ -5,13 +5,13 @@ function PetInformationNode(props) {
 
     const { globalState } = useGlobalState();
 
-    const filteredpet = globalState.filter(pet => pet.id === props.id);
+    const filteredpet = globalState.filter(pet => pet.petId === props.petId);
 
     console.log(filteredpet);
     
     const PetPage = filteredpet.map((pet) => (
         <div>
-            <ul key={pet.id}>
+            <ul key={pet.petId}>
                 <li><h1>{pet.name}</h1></li>
                 <li><img src={pet.avatar} alt={pet.name}></img></li>
                 <li><span>species:{pet.species}</span></li>

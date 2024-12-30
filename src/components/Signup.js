@@ -4,57 +4,58 @@ import "../compoentsCss/Login.css"
 
 
 function Signup() {
-    const [username, setUsername] = useState('');
+    const [account, setAccount] = useState('');
+    const [nickname, setNickname] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
 
     const navigate = useNavigate();
     const handleSignup = (event) => {
-        
-        event.preventDefault();
-        
 
-        if (password !== confirmPassword) 
-            {
+        event.preventDefault();
+
+
+        if (password !== confirmPassword) {
             alert("两次密码输入不一致");
             //setUsername('');
             setPassword('');
             setConfirmPassword('');
             //setEmail('');
             return;
-            }
-        
+        }
+
         else {
-            fetch("http://localhost:8080/user/check/?username=" + username, 
+            fetch("http://localhost:8080/user/check/?account=" + account,
                 { method: 'POST' }).
                 then((response) => {
-                    console.log(response.json().then((res)=>{
+                    console.log(response.json().then((res) => {
                         console.log(res);
-                        if(res == true)
-                        {
+                        if (res == true) {
                             alert("用户名已存在");
-                            setUsername('');
+                            setAccount('');
                             setPassword('');
                             setConfirmPassword('');
-                            setEmail('');
+                            
                             return;
-                        
+
                         }
-                        else{
-                            fetch("http://localhost:8080/user/insert/?username=" + username + 
-                                "&password=" + password + "&email=" + email+"&identity=用户", 
+                        else {
+                            fetch("http://localhost:8080/user/insert/?account=" + account +
+                                "&password=" + password + "&email=" + email + "&identity=用户" + 
+                                "&phone=" + phone + "&nickname=" + nickname,
                                 { method: 'POST' }).
                                 then(() => {
-                                  console.log("添加成功");
+                                    console.log("添加成功");
                                 })
-                
-                        alert("注册成功");
-                        navigate("/Login");
+
+                            alert("注册成功");
+                            navigate("/Login");
                         }
                     }))
                 })
-            
+
         }
     };
 
@@ -64,13 +65,22 @@ function Signup() {
             <form onSubmit={handleSignup} >
 
                 <h1>SIGN UP</h1>
-                <label htmlFor="username">username:</label>
+                <label htmlFor="username">account:</label>
                 <input
                     type="text"
                     id="username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
+                    value={account}
+                    onChange={(e) => setAccount(e.target.value)}
                 />
+
+                <label htmlFor="nickname">nickname:</label>
+                <input
+                    type="text"
+                    id="nickname"
+                    value={nickname}
+                    onChange={(e) => setNickname(e.target.value)}
+                />
+
 
                 <label htmlFor="password">password:</label>
                 <input
@@ -94,6 +104,14 @@ function Signup() {
                     id="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                />
+
+                <label htmlFor="phone">phone:</label>
+                <input
+                    type="text"
+                    id="phone"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                 />
                 <br />
                 <button type="submit">注册</button>
