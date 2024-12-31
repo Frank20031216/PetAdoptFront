@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGlobalState } from './GlobalState'
+import { useGlobalState } from '../GlobalState'
 
 function PetInformationNode(props) {
 

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../compoentsCss/Login.css"
+import "../../compoentsCss/Login.css"
+import { BASE_URL} from '../../config';
 
 
 function Signup() {
@@ -27,7 +28,7 @@ function Signup() {
         }
 
         else {
-            fetch("http://localhost:8080/user/check/?account=" + account,
+            fetch(`${BASE_URL}/user/check/?account=` + account,
                 { method: 'POST' }).
                 then((response) => {
                     console.log(response.json().then((res) => {
@@ -42,7 +43,7 @@ function Signup() {
 
                         }
                         else {
-                            fetch("http://localhost:8080/user/insert/?account=" + account +
+                            fetch(`${BASE_URL}/user/insert/?account=` + account +
                                 "&password=" + password + "&email=" + email + "&identity=用户" + 
                                 "&phone=" + phone + "&nickname=" + nickname,
                                 { method: 'POST' }).

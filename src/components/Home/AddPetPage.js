@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
-import { useGlobalState } from './GlobalState'
-import '../compoentsCss/AddPetPage.css'
-
+import { useGlobalState } from '../GlobalState'
+import '../../compoentsCss/AddPetPage.css'
+import { BASE_URL} from '../../config';
 
 
 function AddPetPage() {
@@ -33,7 +33,7 @@ function AddPetPage() {
         console.log(name, age, species, gender, description);
 
         event.preventDefault();
-        fetch("http://localhost:8080/pet/insert/?name=" + name + "&avatar=" + avatar + "&age="
+        fetch(`${BASE_URL}/pet/insert/?name=` + name + "&avatar=" + avatar + "&age="
             + age + "&species=" + species+ "&kind=" + kind + "&gender=" + gender + "&description="
             + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat +"&status=6",
             { method: 'POST' }).
@@ -46,7 +46,7 @@ function AddPetPage() {
             const formData = new FormData();
             formData.append('file', file);
             try {
-              const response = fetch('http://localhost:8080/files/upload', { // 假设Spring Boot应用运行在8080端口
+              const response = fetch('${BASE_URL}/files/upload', { // 假设Spring Boot应用运行在8080端口
                 method: 'POST',
                 body: formData,
               });

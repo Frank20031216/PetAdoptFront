@@ -1,5 +1,5 @@
 import React from'react';
-import img10430 from '../img/1-0430-开心吃.png'
+import img10430 from '../../img/1-0430-开心吃.png'
 
 function About() {
     return (

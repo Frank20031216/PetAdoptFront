@@ -1,5 +1,5 @@
 import React from 'react';
-import '../compoentsCss/PetNode.css';
+import '../../compoentsCss/PetNode.css';
 
 function PetNode(props) {
     

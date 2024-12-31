@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { GlobalProvider, useGlobalState } from './components/GlobalState';
 
 
-import PetInformationNode from './components/PetInformationNode';
+
 
 import {
   BrowserRouter as Router,
@@ -14,13 +14,15 @@ import {
 } from 'react-router-dom';
 
 import Topbar from './components/Topbar';
-import Home from './components/Home';
-import Information from './components/Information';
-import AddPetPage from './components/AddPetPage';
-import Login from './components/Login';
-import About from './components/About';
-import Contact from './components/Contact';
-import Signup from './components/Signup';
+import Home from './components/Home/Home';
+import Information from './components/information/Information';
+import PetInformationNode from './components/information/PetInformationNode';
+import AddPetPage from './components/Home/AddPetPage';
+import Login from './components/Authorization/Login';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
+import Signup from './components/Authorization/Signup';
+import PersonalCenter from './components/PersonalCenter/PersonalCenter';
 
 function App() {
 
@@ -35,9 +37,6 @@ function App() {
     )
   )
 
-  
-    
-   
 
   return (
     <Router>
@@ -55,7 +54,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/signup" element={<Signup />} />
-
+          <Route path="/personalcenter" element={<PersonalCenter />} />
         </Routes>
 
 

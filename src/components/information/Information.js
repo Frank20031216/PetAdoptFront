@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useRef, useEffect } from "react";
-import { useGlobalState } from './GlobalState'
+import { useGlobalState } from '../GlobalState'
 import PetNode from './PetNode';
 import { useNavigate } from 'react-router-dom';
 

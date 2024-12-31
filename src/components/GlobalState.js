@@ -1,6 +1,7 @@
 //记录所有pet信息，全局变量
 import React, { createContext, useContext, useState ,useEffect} from 'react';
-import { use } from 'react';
+import { BASE_URL} from '../config';
+
 
 // 创建上下文
 const GlobalContext = createContext();
@@ -14,7 +15,7 @@ export const GlobalProvider = ({ children }) => {
     const [editCount, setEditCount] = useState(0);
 
 useEffect(() => {
-  fetch("http://localhost:8080/pet/all").then((response) => {
+  fetch(`${BASE_URL}/pet/all`).then((response) => {
     return response.json();
   }).then((pets) => {
     setGlobalState(pets);

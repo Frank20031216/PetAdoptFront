@@ -1,6 +1,7 @@
 import React from 'react';
 import { CustomOverlay } from 'react-bmapgl';
-import '../compoentsCss/PetMapTag.css'
+import '../../compoentsCss/PetMapTag.css'
+
 
 function PetMapTag(props) {
     return (
