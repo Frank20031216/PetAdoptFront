@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { GlobalProvider, useGlobalState } from './components/GlobalState';
-
-
-
-
+import { GlobalProvider, useGlobalState } from './GlobalState';
 import {
   BrowserRouter as Router,
   Routes,
@@ -24,9 +20,22 @@ import Contact from './components/Contact/Contact';
 import Signup from './components/Authorization/Signup';
 import PersonalCenter from './components/PersonalCenter/PersonalCenter';
 
+
+import Sidebar from './adminCompoents/Sidebar'
+import ApplicationhandlingPage from './adminCompoents/Applicationhandling/ApplicationhandlingPage'
+
+
+
 function App() {
 
-  const { globalState, setGlobalState} = useGlobalState();
+  const { globalState, setGlobalState, token, setToken } = useGlobalState();
+  const [identity, setIdentity] = useState(null);
+
+  useEffect(() => {
+    setToken(localStorage.getItem("token"));
+    setIdentity(localStorage.getItem("identity"));
+  }, [token, identity]);
+
   const PetInformationRouteList = globalState.map(
     (pet) => (
       <Route key={pet.id}
@@ -37,32 +46,36 @@ function App() {
     )
   )
 
-
-  return (
-    <Router>
-
-      <div class="App">
-        <Topbar />
-
-        <Routes>
-
-          <Route path="/" element={<Home />} />
-          <Route path="/Information" element={<Information />} />
-          {PetInformationRouteList}
-          <Route path="/AddPetPage" element={<AddPetPage />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/personalcenter" element={<PersonalCenter />} />
-        </Routes>
-
-
-      </div>
-
-
-    </Router>
-  );
+  if (token === '1' && identity === "管理员")
+    return (
+      <Router>
+        <div style={{ display: "flex" }}>
+          <Sidebar />
+          <Routes>
+            <Route path="/applicationhandling" element={<ApplicationhandlingPage />} />
+          </Routes>
+        </div>
+      </Router>
+    )
+  else
+    return (
+      <Router>
+        <div class="App">
+          <Topbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/Information" element={<Information />} />
+            {PetInformationRouteList}
+            <Route path="/AddPetPage" element={<AddPetPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/personalcenter" element={<PersonalCenter />} />
+          </Routes>
+        </div>
+      </Router>
+    );
 
 
 }

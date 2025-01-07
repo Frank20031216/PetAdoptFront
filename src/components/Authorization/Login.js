@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import "../../compoentsCss/Login.css";
-import { useGlobalState } from '../GlobalState';
+import { useGlobalState } from '../../GlobalState';
 import { useNavigate } from "react-router-dom";
 import { BASE_URL} from '../../config';
 
@@ -28,12 +28,14 @@ function Login() {
                         .then(identity => {
                           console.log(identity); // 处理字符串数据
                           localStorage.setItem("identity", identity); // 保存身份信息
-                        })
+                        }).then(() => {
                     localStorage.setItem("token", 1);
                     localStorage.setItem("account", account);
                     localStorage.setItem("password", password);
                     alert("登录成功");
                     navigate("/");
+                    window.location.reload();
+                        })
                    }
                    else{
                     alert("用户名或密码错误");

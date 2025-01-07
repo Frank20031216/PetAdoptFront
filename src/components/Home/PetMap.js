@@ -4,7 +4,7 @@ import { Map, Marker, NavigationControl, InfoWindow, CityListControl, PanoramaCo
 //需要关掉strict模式，否则会地图加载后便消失（详见https://juejin.cn/post/7426628755738624037）
 import PetMapTag from './PetMapTag';
 import AddPetTag from './AddPetTag';
-import { useGlobalState } from '../GlobalState'
+import { useGlobalState } from '../../GlobalState'
 import { useNavigate, } from 'react-router-dom';
 import { } from 'react-router'
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import '../compoentsCss/Topbar.css';
 import { useNavigate } from 'react-router-dom';
-import { useGlobalState } from './GlobalState';
+import { useGlobalState } from './../GlobalState';
 import Logout from './Authorization/Logout';
 
 function Topbar() {

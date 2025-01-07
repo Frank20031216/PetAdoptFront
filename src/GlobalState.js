@@ -1,6 +1,6 @@
 //记录所有pet信息，全局变量
 import React, { createContext, useContext, useState ,useEffect} from 'react';
-import { BASE_URL} from '../config';
+import { BASE_URL} from './config';
 
 
 // 创建上下文

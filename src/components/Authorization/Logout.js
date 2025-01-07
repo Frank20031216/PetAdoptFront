@@ -6,7 +6,7 @@ function Logout() {
     const navigate = useNavigate();
     function Logout() {
         localStorage.removeItem('token');
-        localStorage.removeItem('username');
+        localStorage.removeItem('account');
         localStorage.removeItem('password');
         localStorage.removeItem('identity');
     navigate('/login'); 

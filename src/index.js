@@ -4,11 +4,13 @@ import './index.css';
 import './compoentsCss/Global.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { GlobalProvider } from './components/GlobalState';
+import { GlobalProvider } from './GlobalState';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+
 root.render(
     <GlobalProvider>
-    <App />
+        <App />
     </GlobalProvider>
 );
 
@@ -16,3 +18,4 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+

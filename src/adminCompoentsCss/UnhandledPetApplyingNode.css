@@ -1,0 +1,83 @@
+.unhandled-pet-applying-node {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif; /* 统一字体样式 */
+}
+
+.unhandled-pet-applying-node ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+}
+
+.unhandled-pet-applying-node li {
+    margin-right: 10px; /* 列表项之间的间距 */
+}
+
+.unhandled-pet-applying-node img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    vertical-align: middle; /* 确保图片和文字在同一水平线上 */
+}
+
+.unhandled-pet-applying-node span,
+.unhandled-pet-applying-node label {
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1.5;
+    vertical-align: middle; /* 确保文字和图片在同一水平线上 */
+}
+
+.unhandled-pet-applying-node input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    vertical-align: middle; /* 确保输入框和文字在同一水平线上 */
+}
+
+.unhandled-pet-applying-node .button {
+    display: flex;
+    gap: 10px;
+}
+
+.unhandled-pet-applying-node button {
+    padding: 5px 10px;
+    
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    vertical-align: middle; /* 确保按钮和文字在同一水平线上 */
+}
+
+
+#approval
+{
+    background-color: #007bff;
+}
+#approval:hover
+{
+    background-color: #0056b3;
+}
+
+#disapproval
+{
+    background-color: #ff0800ae;
+}
+#disapproval:hover
+{
+    background-color: #b30000;
+}

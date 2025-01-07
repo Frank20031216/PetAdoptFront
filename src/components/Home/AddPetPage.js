@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
-import { useGlobalState } from '../GlobalState'
+import { useGlobalState } from '../../GlobalState'
 import '../../compoentsCss/AddPetPage.css'
 import { BASE_URL} from '../../config';
 

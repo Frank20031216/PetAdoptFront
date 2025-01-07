@@ -1,7 +1,7 @@
 import React,{ useEffect } from 'react';
 import PetMap from './PetMap'
 
-import { useGlobalState } from '../GlobalState';
+import { useGlobalState } from '../../GlobalState';
 import { useNavigate } from "react-router-dom";
 
 function Home() {
