@@ -14,8 +14,8 @@ function Information() {
         navigate(`/Information/id=${petId}`)
     }
 
-
-    const PetList = globalState.map(
+    const filteredPets = globalState.filter(pet => pet.status === '3');
+    const PetList = filteredPets.map(
         (pet) => (
             <PetNode
                 key={pet.petId}
@@ -29,13 +29,11 @@ function Information() {
     const { token, setToken } = useGlobalState();
     useEffect(() => {
         setToken(localStorage.getItem("token"));
-        console.log("token: ", token);
     }, []);
 
     if (token === '1') {
         return (
             <div class="infomation-container" style={{ marginTop: '80px',height:'50rem', overflowY: 'auto' }}>
-                
                 {PetList}
             </div>
         );

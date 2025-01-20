@@ -1,5 +1,5 @@
 .sidebar {
-    width: 300px; /* 侧边栏宽度 */
+    width: 20%; /* 侧边栏宽度 */
     height: 100vh; /* 高度为100% */
     background-color:var(--button-color) ;
     color: #fff; /* 文字颜色 */
@@ -7,6 +7,7 @@
     box-sizing: border-box; /* 盒模型 */
     top: 0;
     left: 0;
+    /* opacity: 0.9; */
 }
 
 /* Sidebar 标题样式 */

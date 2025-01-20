@@ -1,0 +1,49 @@
+.AdoptedPetnode {
+    width: 100%; /* 宽度占满容器 */
+    max-width: 100%; /* 最大宽度 */
+    background-color: #f7f7f7f0;; /* 背景颜色 */
+    border: 1px solid #ddd; /* 边框样式 */
+    border-radius: 8px; /* 圆角 */
+    padding: 20px; /* 内边距 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    
+    display: flex; /* 使用 Flexbox 布局 */
+    align-items: center; /* 垂直居中 */
+    transition: transform 0.3s ease; /* 平滑的变换效果 */
+    position: relative; /* 相对定位，用于绝对定位子元素 */
+}
+
+.AdoptedPetnode:hover {
+    transform: scale(1.05); /* 鼠标悬停时放大 5% */
+    z-index: 10; /* 确保放大后的元素在上方 */
+}
+
+.AdoptedPetnode img {
+    width: 100px; /* 头像宽度 */
+    height: 100px; /* 头像高度 */
+    border-radius: 50%; /* 头像圆形 */
+    margin-right: 20px; /* 与文本的间距 */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 头像阴影效果 */
+}
+
+.AdoptedPetnode ul {
+    list-style: none; /* 去掉列表默认样式 */
+    padding: 0; /* 去掉默认内边距 */
+    margin: 0; /* 去掉默认外边距 */
+    display: flex; /* 使用 Flexbox 布局 */
+    flex-wrap: wrap; /* 允许换行 */
+    gap: 10px; /* 项目之间的间距 */
+    flex-grow: 1; /* 占据剩余空间 */
+}
+
+.AdoptedPetnode li {
+    margin-left: 50px;
+    font-size: 20px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    line-height: 1; /* 行高 */
+}
+.AdoptedPetnode li span {
+    font-weight: bold; /* 加粗 */
+    color: #222; /* 更深的字体颜色 */
+    font-style: italic;
+}

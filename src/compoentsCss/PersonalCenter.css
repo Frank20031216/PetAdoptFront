@@ -1,0 +1,27 @@
+/* 头像样式 */
+.personal-center img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* 圆形头像 */
+    margin-right: 20px; /* 与信息之间的间距 */
+    border: 3px solid #ddd; /* 边框 */
+}
+
+/* 信息容器样式 */
+.personal-center .info {
+    display: block;
+    justify-content: flex-start; /* 水平起始对齐 */
+    margin-top: 80px; /* 保持与内联样式一致，也可以移除内联样式，直接在这里设置 */
+    background-color: #f7f7f7d0; /* 背景颜色 */
+    padding: 20px; /* 内边距 */
+    border-radius: 10px; /* 圆角边框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+}
+
+/* 信息文本样式 */
+.personal-center .info p {
+    font-size: 18px; /* 字体大小 */
+    color: #333; /* 字体颜色 */
+    margin: 5px 0; /* 外边距 */
+    font-weight: bold; /* 加粗字体 */
+}

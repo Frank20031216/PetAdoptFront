@@ -9,6 +9,7 @@ function Logout() {
         localStorage.removeItem('account');
         localStorage.removeItem('password');
         localStorage.removeItem('identity');
+        localStorage.removeItem('userId');
     navigate('/login'); 
     }
 

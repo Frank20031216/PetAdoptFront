@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import './../adminCompoentsCss/Sidebar.css';
 
+
 function Sidebar() {
 
     const navigate = useNavigate();
@@ -20,7 +21,7 @@ function Sidebar() {
             <nav>
                 <ul>
                     <button onClick={() => { navigate(-1) }}> ⬅Back </button>
-                    <li><a href="/" >AddPet</a></li>
+                    <li><a href="/addpetreview">AddPetReview</a></li>
                     <li><a href="/applicationhandling">ApplyHandling</a></li>
                     <button onClick={Logout}> Logout </button>
 

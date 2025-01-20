@@ -1,14 +1,35 @@
 import React from 'react';
 import { useGlobalState } from '../../GlobalState'
+import { BASE_URL } from './../../config'
+import { useNavigate } from 'react-router-dom';
 
 function PetInformationNode(props) {
 
-    const { globalState } = useGlobalState();
+    const { globalState,editCount,setEditCount} = useGlobalState();
 
     const filteredpet = globalState.filter(pet => pet.petId === props.petId);
+    const navigate = useNavigate();
 
-    console.log(filteredpet);
-    
+    async function submitapply(petId) {
+        const postdata = {
+            petId: petId,
+            status: 4,
+            belonging: localStorage.getItem('userId')
+        }
+        await fetch(`${BASE_URL}/pet/updateAllWithJson`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postdata)
+            }
+        )
+        setEditCount(editCount+1)
+        alert('申请成功，请等待管理员审核')
+        navigate('/Information')
+    }
+
     const PetPage = filteredpet.map((pet) => (
         <div>
             <ul key={pet.petId}>
@@ -19,8 +40,7 @@ function PetInformationNode(props) {
                 <li><span>gender:{pet.gender}</span></li>
                 <li><span>description:{pet.description}</span></li>
                 <div class="button">
-                    <button onClick={
-                        () => {alert('申请领养成功！')}}>
+                    <button onClick={() => submitapply(pet.petId)}>
                         <span>申请领养</span>
                     </button>
                 </div>

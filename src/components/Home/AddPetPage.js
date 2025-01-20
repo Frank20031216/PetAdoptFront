@@ -35,7 +35,7 @@ function AddPetPage() {
         event.preventDefault();
         fetch(`${BASE_URL}/pet/insert/?name=` + name + "&avatar=" + avatar + "&age="
             + age + "&species=" + species+ "&kind=" + kind + "&gender=" + gender + "&description="
-            + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat +"&status=6",
+            + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat +"&status=1",
             { method: 'POST' }).
             then(() => {
                 console.log("添加成功");
@@ -43,18 +43,18 @@ function AddPetPage() {
             })
 
 
-            const formData = new FormData();
-            formData.append('file', file);
-            try {
-              const response = fetch('${BASE_URL}/files/upload', { // 假设Spring Boot应用运行在8080端口
-                method: 'POST',
-                body: formData,
-              });
-              const data = response.json();
-              console.log(data);
-            } catch (error) {
-              console.error('Error uploading file:', error);
-            }
+            // const formData = new FormData();
+            // formData.append('file', file);
+            // try {
+            //   const response = fetch('${BASE_URL}/files/upload', { // 假设Spring Boot应用运行在8080端口
+            //     method: 'POST',
+            //     body: formData,
+            //   });
+            //   const data = response.json();
+            //   console.log(data);
+            // } catch (error) {
+            //   console.error('Error uploading file:', error);
+            // }
 
         setName("");
         setAge("");
@@ -77,9 +77,9 @@ function AddPetPage() {
                 <label>Name:</label>
                 <input type="text" value={name} onChange={(event) => { setName(event.target.value) }}></input><br></br>
 
-                <label>Avatar:</label>
+                <label>Avatar:(请输入图像链接)</label>
                 
-                    <input type="file" name="file" onChange={handleFileChange} />
+                    {/* <input type="file" name="file" onChange={handleFileChange} /> */}
                     <input type="text" value={avatar} onChange={(event) => { setAvatar(event.target.value) }}></input>
                 
                 <br></br>

@@ -23,7 +23,7 @@ import PersonalCenter from './components/PersonalCenter/PersonalCenter';
 
 import Sidebar from './adminCompoents/Sidebar'
 import ApplicationhandlingPage from './adminCompoents/Applicationhandling/ApplicationhandlingPage'
-
+import AddPetReviewPage from './adminCompoents/AddPetReview/AddPetReviewPage'
 
 
 function App() {
@@ -53,6 +53,7 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path="/applicationhandling" element={<ApplicationhandlingPage />} />
+            <Route path="/addpetreview" element={<AddPetReviewPage />} />
           </Routes>
         </div>
       </Router>

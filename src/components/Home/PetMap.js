@@ -8,7 +8,7 @@ import { useGlobalState } from '../../GlobalState'
 import { useNavigate, } from 'react-router-dom';
 import { } from 'react-router'
 
-function PetMap(props) {
+function PetMap() {
 
     const { globalState} = useGlobalState();
     const [position, setPosition] = useState({ lng: 0, lat: 0 });
@@ -41,7 +41,8 @@ function PetMap(props) {
         //window.removeEventListener("click", handleRighgtClick);
     }
 
-    const pettaglist = globalState.map(
+    const filteredPets = globalState.filter(pet => pet.status === '3');
+    const pettaglist = filteredPets.map(
         (pettag) => (
             <PetMapTag
                 key={pettag.petId}
@@ -64,7 +65,8 @@ function PetMap(props) {
                 style={{ width: '100%', height: '100vh' }}
                 tilt={45}
 
-                onRightclick={handleRighgtClick}>
+                onRightclick={handleRighgtClick}
+                >
 
                 <ScaleControl />
 
