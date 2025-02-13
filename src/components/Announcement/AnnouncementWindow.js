@@ -36,7 +36,7 @@ function AnnouncementWindow() {
     if (localStorage.getItem('isShowAnnouncement') === 'true' && isVisible === true) {
         return (
             <div className="announcement-window">
-                {/* 关闭按钮 */}
+                
                 <button className="close-button" onClick={handleClose}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M6 18L18 6M6 6l12 12" stroke="#333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -48,7 +48,7 @@ function AnnouncementWindow() {
                 </button>
 
                 <div className="content-container">
-                    {/* 左侧：公告标题列表 */}
+                    
                     <div className="sidebar">
                         <h3>公告列表</h3>
                         <ul>
@@ -66,7 +66,7 @@ function AnnouncementWindow() {
                         </ul>
                     </div>
 
-                    {/* 右侧：公告内容显示区 */}
+                    
                     <div className="content">
                         <h3>公告详情</h3>
                         <p>{content}</p>
