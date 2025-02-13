@@ -35,10 +35,11 @@ function AddPetPage() {
         event.preventDefault();
         fetch(`${BASE_URL}/pet/insert/?name=` + name + "&avatar=" + avatar + "&age="
             + age + "&species=" + species+ "&kind=" + kind + "&gender=" + gender + "&description="
-            + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat +"&status=1",
+            + description + "&lng=" + location.state?.position.lng + "&lat=" + location.state?.position.lat 
+            +"&status=1" + "&belonging=" + localStorage.getItem("userId"),
             { method: 'POST' }).
             then(() => {
-                console.log("添加成功");
+                console.log("添加成功,待管理员审核！！！");
                 setEditCount(editCount + 1);
             })
 

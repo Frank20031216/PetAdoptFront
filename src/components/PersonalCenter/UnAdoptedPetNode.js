@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './../../compoentsCss/AdoptedPetNode.css'
+import './../../compoentsCss/UnAdoptedPetNode.css'
 
-function AdoptedPetNode(props) {
+function UnAdoptedPetNode(props) {
     return (
-        <div className="AdoptedPetNode" onClick={() => props.Viewdetails(props.id)}>
+        <div className="UnAdoptedPetNode" onClick={() => props.Viewdetails(props.id)}>
             <img src={props.avatar} alt={props.name} />
             <ul>
                 <li><span>name: </span>{props.name}</li>
@@ -15,4 +15,4 @@ function AdoptedPetNode(props) {
     )
 }
 
-export default AdoptedPetNode;
+export default UnAdoptedPetNode;

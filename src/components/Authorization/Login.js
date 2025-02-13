@@ -29,6 +29,7 @@ function Login() {
                             localStorage.setItem("account", user[0].account);
                             localStorage.setItem("password", user[0].password);
                             localStorage.setItem("identity", user[0].identity);
+                            localStorage.setItem("isShowAnnouncement", true);
                             alert("登录成功");
                             navigate("/");
                             window.location.reload();

@@ -1,0 +1,123 @@
+/* 容器样式 */
+.announcement-window {
+  position: fixed; /* 固定定位 */
+  z-index: 100; /* 层级 */
+  top: 40%;        /* 距离顶部 50% */
+  left: 50%;       /* 距离左侧 50% */
+  transform: translate(-50%, -50%);
+
+  width: 50%;
+  max-width: 800px;
+  height: 40%;
+  max-height: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  
+}
+
+/* 关闭按钮 */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  background-color: #ff4d4f;
+  border-radius: 8px;
+}
+
+.no-attention-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  padding: 8px;
+  background-color: transparent;
+  
+  cursor: pointer;
+  transition: color 0.3s ease;
+  border-color:#ddd;
+  border-radius: 8px;
+}
+
+.no-attention-button:hover {
+  background-color: #545cf8;
+  border-radius: 8px;
+}
+
+.close-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* 内容布局 */
+.content-container {
+  display: flex;
+}
+
+/* 左侧标题列表 */
+.sidebar {
+  width: 250px;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-right: 1px solid #eee;
+}
+
+.sidebar h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar li:hover {
+  background-color: #478646;
+  border-radius: 8px;
+}
+
+/* 右侧内容显示区 */
+.content {
+  flex: 1;
+  padding: 20px;
+}
+
+.content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.content p {
+  color: #000000;
+  white-space: pre-line;
+}
+
+#time {
+  position: absolute;
+  bottom: 30px;
+  right: 100px;
+  padding: 8px;
+
+}

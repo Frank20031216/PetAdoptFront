@@ -1,7 +1,7 @@
-.AdoptedPetNode {
+.UnAdoptedPetNode {
     width: 100%; /* 宽度占满容器 */
     max-width: 100%; /* 最大宽度 */
-    background-color: rgba(94, 170, 98, 0.9); /* 背景颜色 */
+    background-color: rgba(255, 248, 121, 0.9); /* 背景颜色 */
     border: 1px solid #006215; /* 边框样式 */
     border-radius: 8px; /* 圆角 */
     padding: 20px; /* 内边距 */
@@ -13,12 +13,12 @@
     position: relative; /* 相对定位，用于绝对定位子元素 */
 }
 
-.AdoptedPetNode:hover {
+.UnAdoptedPetNode:hover {
     transform: scale(1.05); /* 鼠标悬停时放大 5% */
     z-index: 10; /* 确保放大后的元素在上方 */
 }
 
-.AdoptedPetNode img {
+.UnAdoptedPetNode img {
     width: 100px; /* 头像宽度 */
     height: 100px; /* 头像高度 */
     border-radius: 50%; /* 头像圆形 */
@@ -26,7 +26,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 头像阴影效果 */
 }
 
-.AdoptedPetNode ul {
+.UnAdoptedPetNode ul {
     list-style: none; /* 去掉列表默认样式 */
     padding: 0; /* 去掉默认内边距 */
     margin: 0; /* 去掉默认外边距 */
@@ -36,13 +36,13 @@
     flex-grow: 1; /* 占据剩余空间 */
 }
 
-.AdoptedPetNode li {
+.UnAdoptedPetNode li {
     margin-left: 50px;
     font-size: 25px; /* 字体大小 */
     color: #333; /* 字体颜色 */
     line-height: 1; /* 行高 */
 }
-.AdoptedPetNode li span {
+.UnAdoptedPetNode li span {
     font-weight: bold; /* 加粗 */
     color: #222; /* 更深的字体颜色 */
     font-style: italic;

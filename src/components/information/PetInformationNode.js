@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 function PetInformationNode(props) {
 
-    const { globalState,editCount,setEditCount} = useGlobalState();
+    const { globalState, editCount, setEditCount } = useGlobalState();
 
     const filteredpet = globalState.filter(pet => pet.petId === props.petId);
     const navigate = useNavigate();
@@ -25,9 +25,29 @@ function PetInformationNode(props) {
                 body: JSON.stringify(postdata)
             }
         )
-        setEditCount(editCount+1)
+        setEditCount(editCount + 1)
         alert('申请成功，请等待管理员审核')
-        navigate('/Information')
+        navigate(-1)
+    }
+
+    async function cancelapply(petId) {
+        const postdata = {
+            petId: petId,
+            status: 3,
+            belonging: null
+        }
+        await fetch(`${BASE_URL}/pet/updateAllWithJson`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(postdata)
+            }
+        )
+        setEditCount(editCount + 1)
+        alert('取消申请成功')
+        navigate(-1)
     }
 
     const PetPage = filteredpet.map((pet) => (
@@ -39,10 +59,19 @@ function PetInformationNode(props) {
                 <li><span>age:{pet.age}</span></li>
                 <li><span>gender:{pet.gender}</span></li>
                 <li><span>description:{pet.description}</span></li>
-                <div class="button">
-                    <button onClick={() => submitapply(pet.petId)}>
-                        <span>申请领养</span>
-                    </button>
+                <div className="button">
+                    {pet.status == 3 && (
+                        <button onClick={() => submitapply(pet.petId)}>
+                            <span>申请领养</span>
+                        </button>
+                    )}
+                </div>
+                <div className="button">
+                    {pet.status == 4 && (
+                        <button onClick={() => cancelapply(pet.petId)}>
+                            <span>取消申请领养</span>
+                        </button>
+                    )}
                 </div>
             </ul>
         </div>

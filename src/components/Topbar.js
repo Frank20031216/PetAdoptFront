@@ -19,6 +19,7 @@ function Topbar() {
                     <li><a href="/Information">Information</a></li>
                     <li><a href="/about">About</a></li>
                     <li><a href="/contact">Contact</a></li>
+                    
                     <li id="personalcenter"><a href="/personalcenter">☺ Center</a></li>
 
                     {localStorage.getItem('token') === "1" ?
